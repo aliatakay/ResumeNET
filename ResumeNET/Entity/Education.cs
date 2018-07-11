@@ -1,9 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Education class includes Education Information.
+    /// </summary>
+
     public class Education
         : BaseEntity
     {
@@ -14,18 +17,40 @@ namespace ResumeNET.Entity
         public string EndDate { get; set; }
         public decimal Gno { get; set; }
 
-        public override void Show()
+        /// <summary>
+        /// The Education Constructor assings necessary properties
+        /// </summary>
+        
+        public Education(string Institution, string Area, string StudyType)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Education Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Institution = " + this.Institution);
-            Console.WriteLine("Area = " + this.Area);
-            Console.WriteLine("Study Type = " + this.StudyType);
-            Console.WriteLine("Start Date = " + this.StartDate);
-            Console.WriteLine("End Date = " + this.EndDate);
-            Console.WriteLine("Gno = " + this.Gno);
+            this.Institution = Institution;
+            this.Area = Area;
+            this.StudyType = StudyType;
+            this.StartDate = String.Empty;
+            this.EndDate = String.Empty;
+            this.Gno = Decimal.Zero;
         }
 
+        public Education()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Education Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nEducation ->");
+            sb.Append("\n" + Institution);
+            sb.Append("\n" + Area);
+            sb.Append("\n" + StudyType);
+            sb.Append("\n" + StartDate);
+            sb.Append("\n" + EndDate);
+            sb.Append("\n" + Gno);
+            sb.Append("\n");
+
+            return sb.ToString();
+        }
     }
 }

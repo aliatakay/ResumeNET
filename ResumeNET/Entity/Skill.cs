@@ -1,10 +1,12 @@
 ﻿using ResumeNET.Type;
-using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Skill class includes skills information.
+    /// </summary>
+
     public class Skill
         : BaseEntity
     {
@@ -12,14 +14,32 @@ namespace ResumeNET.Entity
 
         public SkillLevel SkillLevel { get; set; }
 
-        public override void Show()
+        /// <summary>
+        /// The Skill Constructor assings necessary properties
+        /// </summary>
+        
+        public Skill(string Name, SkillLevel SkillLevel)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Skill Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Name = " + this.Name);
-            Console.WriteLine("Level = " + this.SkillLevel);
+            this.Name = Name;
+            this.SkillLevel = SkillLevel;
         }
 
+        public Skill()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Skills Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nSkills ->");
+            sb.Append("\n" + Name);
+            sb.Append("\n" + SkillLevel);
+            sb.Append("\n");
+
+            return sb.ToString();
+        }
     }
 }

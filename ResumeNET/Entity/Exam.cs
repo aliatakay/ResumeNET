@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Exam class includes Exams Information.
+    /// </summary>
+
     public class Exam
         : BaseEntity
     {
@@ -11,15 +13,34 @@ namespace ResumeNET.Entity
         public decimal Score { get; set; }
         public string Date { get; set; }
 
-        public override void Show()
+        /// <summary>
+        /// The Exam Constructor assings necessary properties
+        /// </summary>
+        
+        public Exam(string Name, decimal Score, string Date)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Exam Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Name = " + this.Name);
-            Console.WriteLine("Score = " + this.Score);
-            Console.WriteLine("Date = " + this.Date);
+            this.Name = Name;
+            this.Score = Score;
+            this.Date = Date;
         }
 
+        public Exam()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Exams Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nExams ->");
+            sb.Append("\n" + Name);
+            sb.Append("\n" + Score);
+            sb.Append("\n" + Date);
+            sb.Append("\n");
+
+            return sb.ToString();
+        }
     }
 }

@@ -1,9 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Basic class includes personal information.
+    /// </summary>
+
     public class Basic
         : BaseEntity
     {
@@ -16,38 +19,46 @@ namespace ResumeNET.Entity
 
         public Location Location { get; set; }
 
-        public Basic()
+        /// <summary>
+        /// The Basic Constructor assings necessary properties
+        /// </summary>
+
+        public Basic(Location location, string FirstName, string LastName, string EmailAddress)
+            : this(location)
         {
-            Location = new Location();
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.EmailAddress = EmailAddress;
+            this.PhoneNumber = String.Empty;
+            this.Website = String.Empty;
+            this.Summary = String.Empty;
         }
 
-        
-        public override void Show()
+        public Basic(Location location)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Personal Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("First Name = " + this.FirstName);
-            Console.WriteLine("Last Name = " + this.LastName);
-            Console.WriteLine("Email Address = " + this.EmailAddress);
-            Console.WriteLine("Phone Number = " + this.PhoneNumber);
-            Console.WriteLine("Website = " + this.Website);
-            Console.WriteLine("Summary = " + this.Summary);
-            Location.Show();
+            this.Location = location;
         }
 
-        //public bool Validate()
-        //{
-        //    var result = true;
+        /// <summary>
+        /// The Write Method returns all Personal Information as a string.
+        /// </summary>
 
-        //    if (string.IsNullOrEmpty(this.FirstName)) result = false;
-        //    if (string.IsNullOrEmpty(this.LastName)) result = false;
-        //    if (string.IsNullOrEmpty(this.EmailAddress)) result = false;
-        //    if (string.IsNullOrEmpty(this.PhoneNumber)) result = false;
-        //    if (string.IsNullOrEmpty(this.Website)) result = false;
-        //    if (string.IsNullOrEmpty(this.Summary)) result = false;
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nPersonal Information ->");
 
-        //    return result;
-        //}
+            sb.Append("\n" + FirstName);
+            sb.Append("\n" + LastName);
+            sb.Append("\n" + EmailAddress);
+            sb.Append("\n" + PhoneNumber);
+            sb.Append("\n" + Website);
+            sb.Append("\n" + Summary);
+            sb.Append("\n");
+
+            string locationString = Location.Write();
+            sb.Append(locationString);
+
+            return sb.ToString();
+        }
     }
 }

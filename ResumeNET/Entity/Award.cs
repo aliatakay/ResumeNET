@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Award class includes Awards Information.
+    /// </summary>
+
     public class Award
         : BaseEntity
     {
@@ -12,15 +14,36 @@ namespace ResumeNET.Entity
         public string Awarder { get; set; }
         public string Summary { get; set; }
 
-        public override void Show()
+        /// <summary>
+        /// The Award Constructor assings necessary properties
+        /// </summary>
+        
+        public Award(string Title, string Date, string Awarder, string Summary)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Award Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Title = " + this.Title);
-            Console.WriteLine("Date = " + this.Date);
-            Console.WriteLine("Awarder = " + this.Awarder);
-            Console.WriteLine("Summary = " + this.Summary);
+            this.Title = Title;
+            this.Date = Date;
+            this.Awarder = Awarder;
+            this.Summary = Summary;
+        }
+
+        public Award()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Awards Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nAwards ->");
+            sb.Append("\n" + Title);
+            sb.Append("\n" + Date);
+            sb.Append("\n" + Awarder);
+            sb.Append("\n" + Summary);
+            sb.Append("\n");
+
+            return sb.ToString();
         }
     }
 }

@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Location class includes location information.
+    /// </summary>
+
     public class Location
         : BaseEntity
     {
@@ -13,19 +15,38 @@ namespace ResumeNET.Entity
         public string Country { get; set; }
         public string Region { get; set; }
 
-        public override void Show()
-        {
-            Console.WriteLine("\n");
-            Console.WriteLine("Location Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Address = " + this.Address);
-            Console.WriteLine("Postal Code = " + this.ZipCode);
-            Console.WriteLine("City = " + this.City);
-            Console.WriteLine("Country = " + this.Country);
-            Console.WriteLine("Region = " + this.Region);
-        }
+        /// <summary>
+        /// The Location Constructor assings necessary properties
+        /// </summary>
         
+        public Location(string Address, int ZipCode, string City, string Country, string Region)
+        {
+            this.Address = Address;
+            this.ZipCode = ZipCode;
+            this.City = City;
+            this.Country = Country;
+            this.Region = Region;
+        }
 
+        public Location()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Location Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nLocation ->");
+            sb.Append("\n" + Address);
+            sb.Append("\n" + ZipCode);
+            sb.Append("\n" + City);
+            sb.Append("\n" + Country);
+            sb.Append("\n" + Region);
+            sb.Append("\n");
+
+            return sb.ToString();
+        }
     }
-
 }

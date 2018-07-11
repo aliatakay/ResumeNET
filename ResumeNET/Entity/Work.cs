@@ -1,10 +1,13 @@
 ﻿using ResumeNET.Type;
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ResumeNET.Entity
 {
+    /// <summary>
+    /// The Work class includes works information.
+    /// </summary>
+
     public class Work
         : BaseEntity
     {
@@ -16,16 +19,40 @@ namespace ResumeNET.Entity
 
         public WorkState WorkState { get; set; }
 
-        public override void Show()
+        /// <summary>
+        /// The Work Constructor assings necessary properties
+        /// </summary>
+        
+        public Work(WorkState WorkState, string Name, string Position)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Work Info");
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Name = " + this.Name);
-            Console.WriteLine("Position = " + this.Position);
-            Console.WriteLine("Website = " + this.Website);
-            Console.WriteLine("Start Date = " + this.StartDate);
-            Console.WriteLine("End Date = " + this.EndDate);
+            this.WorkState = WorkState;
+            this.Name = Name;
+            this.Position = Position;
+            this.Website = String.Empty;
+            this.StartDate = String.Empty;
+            this.EndDate = String.Empty;
+        }
+
+        public Work()
+        {
+        }
+
+        /// <summary>
+        /// The Write Method returns all Works Information as a string.
+        /// </summary>
+        
+        public override string Write()
+        {
+            StringBuilder sb = new StringBuilder("\nWorks ->");
+            sb.Append("\n" + WorkState);
+            sb.Append("\n" + Name);
+            sb.Append("\n" + Position);
+            sb.Append("\n" + Website);
+            sb.Append("\n" + StartDate);
+            sb.Append("\n" + EndDate);
+            sb.Append("\n");
+
+            return sb.ToString();
         }
     }
 }
