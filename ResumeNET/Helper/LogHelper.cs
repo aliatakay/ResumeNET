@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ResumeNET.Helper
+﻿namespace ResumeNET.Helper
 {
     public enum LogType
     {
@@ -15,14 +11,14 @@ namespace ResumeNET.Helper
     {
         public static bool Write(LogType logType)
         {
-            bool result = false;
+            var result = false;
             //Codes
             return result;
         }
 
         public static bool Read(LogType logType)
         {
-            bool result = false;
+            var result = false;
             //Codes
             return result;
         }

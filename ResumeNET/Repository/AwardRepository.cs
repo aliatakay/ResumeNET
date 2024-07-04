@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ResumeNET.Entity;
+﻿using ResumeNET.Entity;
 using ResumeNET.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace ResumeNET.Repository
 {
-    public class AwardRepository
-        : IAwardRepository
+    public class AwardRepository : IAwardRepository
     {
         public bool Create()
         {

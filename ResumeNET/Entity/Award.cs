@@ -2,41 +2,25 @@
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Award class includes Awards Information.
-    /// </summary>
-
-    public class Award
-        : BaseEntity
+    public class Award : BaseEntity
     {
         public string Title { get; set; }
         public string Date { get; set; }
         public string Awarder { get; set; }
         public string Summary { get; set; }
-
-        /// <summary>
-        /// The Award Constructor assings necessary properties
-        /// </summary>
         
-        public Award(string Title, string Date, string Awarder, string Summary)
+        public Award(string title, string date, string awarder, string summary)
         {
-            this.Title = Title;
-            this.Date = Date;
-            this.Awarder = Awarder;
-            this.Summary = Summary;
+            this.Title = title;
+            this.Date = date;
+            this.Awarder = awarder;
+            this.Summary = summary;
         }
-
-        public Award()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Awards Information as a string.
-        /// </summary>
         
         public override string Write()
         {
-            StringBuilder sb = new StringBuilder("\nAwards ->");
+            var sb = new StringBuilder("\nAwards ->");
+            
             sb.Append("\n" + Title);
             sb.Append("\n" + Date);
             sb.Append("\n" + Awarder);

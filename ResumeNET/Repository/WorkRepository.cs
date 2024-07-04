@@ -1,12 +1,10 @@
-﻿using System;
+﻿using ResumeNET.Entity;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using ResumeNET.Entity;
 
 namespace ResumeNET.Repository
 {
-    public class WorkRepository
-        : IWorkRepository
+    public class WorkRepository : IWorkRepository
     {
         public bool Create()
         {

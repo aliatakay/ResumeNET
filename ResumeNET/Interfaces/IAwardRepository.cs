@@ -1,9 +1,7 @@
 ﻿using ResumeNET.Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace ResumeNET.Interfaces 
+namespace ResumeNET.Interfaces
 {
     public interface IAwardRepository
     {

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Basic class includes personal information.
-    /// </summary>
-
-    public class Basic
-        : BaseEntity
+    public class Basic : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,19 +13,14 @@ namespace ResumeNET.Entity
 
         public Location Location { get; set; }
 
-        /// <summary>
-        /// The Basic Constructor assings necessary properties
-        /// </summary>
-
-        public Basic(Location location, string FirstName, string LastName, string EmailAddress)
-            : this(location)
+        public Basic(Location location, string firstName, string lastName, string emailAddress) : this(location)
         {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.EmailAddress = EmailAddress;
-            this.PhoneNumber = String.Empty;
-            this.Website = String.Empty;
-            this.Summary = String.Empty;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.EmailAddress = emailAddress;
+            this.PhoneNumber = string.Empty;
+            this.Website = string.Empty;
+            this.Summary = string.Empty;
         }
 
         public Basic(Location location)
@@ -39,13 +28,9 @@ namespace ResumeNET.Entity
             this.Location = location;
         }
 
-        /// <summary>
-        /// The Write Method returns all Personal Information as a string.
-        /// </summary>
-
         public override string Write()
         {
-            StringBuilder sb = new StringBuilder("\nPersonal Information ->");
+            var sb = new StringBuilder("\nPersonal Information ->");
 
             sb.Append("\n" + FirstName);
             sb.Append("\n" + LastName);
@@ -55,7 +40,8 @@ namespace ResumeNET.Entity
             sb.Append("\n" + Summary);
             sb.Append("\n");
 
-            string locationString = Location.Write();
+            var locationString = Location.Write();
+
             sb.Append(locationString);
 
             return sb.ToString();
