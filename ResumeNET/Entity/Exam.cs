@@ -2,35 +2,19 @@
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Exam class includes Exams Information.
-    /// </summary>
-
     public class Exam
         : BaseEntity
     {
         public string Name { get; set; }
         public decimal Score { get; set; }
         public string Date { get; set; }
-
-        /// <summary>
-        /// The Exam Constructor assings necessary properties
-        /// </summary>
         
-        public Exam(string Name, decimal Score, string Date)
+        public Exam(string name, decimal score, string date)
         {
-            this.Name = Name;
-            this.Score = Score;
-            this.Date = Date;
+            this.Name = name;
+            this.Score = score;
+            this.Date = date;
         }
-
-        public Exam()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Exams Information as a string.
-        /// </summary>
         
         public override string Write()
         {

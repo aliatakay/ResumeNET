@@ -3,10 +3,6 @@ using System.Text;
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Resume class includes lists of all information.
-    /// </summary>
-
     public class Resume
         : BaseEntity
     {
@@ -21,10 +17,6 @@ namespace ResumeNET.Entity
         public List<Exam> Exams { get; set; }
         public List<Interest> Interests { get; set; }
         public List<Reference> References { get; set; }
-
-        /// <summary>
-        /// The Resume Constructor assings necessary new lists
-        /// </summary>
         
         public Resume()
         {
@@ -38,11 +30,6 @@ namespace ResumeNET.Entity
             Interests = new List<Interest>();
             References = new List<Reference>();
         }
-
-
-        /// <summary>
-        /// The Write Method returns all the other strings as a string.
-        /// </summary>
         
         public override string Write()
         {

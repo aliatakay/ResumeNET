@@ -1,12 +1,7 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Education class includes Education Information.
-    /// </summary>
-
     public class Education
         : BaseEntity
     {
@@ -17,28 +12,16 @@ namespace ResumeNET.Entity
         public string EndDate { get; set; }
         public decimal Gno { get; set; }
 
-        /// <summary>
-        /// The Education Constructor assings necessary properties
-        /// </summary>
-        
-        public Education(string Institution, string Area, string StudyType)
+        public Education(string institution, string area, string studyType)
         {
-            this.Institution = Institution;
-            this.Area = Area;
-            this.StudyType = StudyType;
-            this.StartDate = String.Empty;
-            this.EndDate = String.Empty;
-            this.Gno = Decimal.Zero;
+            this.Institution = institution;
+            this.Area = area;
+            this.StudyType = studyType;
+            this.StartDate = string.Empty;
+            this.EndDate = string.Empty;
+            this.Gno = decimal.Zero;
         }
 
-        public Education()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Education Information as a string.
-        /// </summary>
-        
         public override string Write()
         {
             StringBuilder sb = new StringBuilder("\nEducation ->");

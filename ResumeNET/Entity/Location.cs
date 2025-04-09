@@ -2,10 +2,6 @@
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Location class includes location information.
-    /// </summary>
-
     public class Location
         : BaseEntity
     {
@@ -14,10 +10,6 @@ namespace ResumeNET.Entity
         public string City { get; set; }
         public string Country { get; set; }
         public string Region { get; set; }
-
-        /// <summary>
-        /// The Location Constructor assings necessary properties
-        /// </summary>
         
         public Location(string Address, int ZipCode, string City, string Country, string Region)
         {
@@ -27,14 +19,6 @@ namespace ResumeNET.Entity
             this.Country = Country;
             this.Region = Region;
         }
-
-        public Location()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Location Information as a string.
-        /// </summary>
         
         public override string Write()
         {

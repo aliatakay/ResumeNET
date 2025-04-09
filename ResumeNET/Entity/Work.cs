@@ -1,13 +1,8 @@
 ﻿using ResumeNET.Type;
-using System;
 using System.Text;
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Work class includes works information.
-    /// </summary>
-
     public class Work
         : BaseEntity
     {
@@ -18,28 +13,16 @@ namespace ResumeNET.Entity
         public string EndDate { get; set; }
 
         public WorkState WorkState { get; set; }
-
-        /// <summary>
-        /// The Work Constructor assings necessary properties
-        /// </summary>
         
         public Work(WorkState WorkState, string Name, string Position)
         {
             this.WorkState = WorkState;
             this.Name = Name;
             this.Position = Position;
-            this.Website = String.Empty;
-            this.StartDate = String.Empty;
-            this.EndDate = String.Empty;
+            this.Website = string.Empty;
+            this.StartDate = string.Empty;
+            this.EndDate = string.Empty;
         }
-
-        public Work()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Works Information as a string.
-        /// </summary>
         
         public override string Write()
         {

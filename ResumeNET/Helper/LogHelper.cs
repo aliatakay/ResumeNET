@@ -11,16 +11,12 @@
     {
         public static bool Write(LogType logType)
         {
-            var result = false;
-            //Codes
-            return result;
+            return true;
         }
 
         public static bool Read(LogType logType)
         {
-            var result = false;
-            //Codes
-            return result;
+            return true;
         }
     }
 }

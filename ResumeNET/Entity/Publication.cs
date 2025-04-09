@@ -1,12 +1,7 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace ResumeNET.Entity
 {
-    /// <summary>
-    /// The Publicaton class includes publications information.
-    /// </summary>
-
     public class Publication
         : BaseEntity
     {
@@ -15,25 +10,13 @@ namespace ResumeNET.Entity
         public string ReleaseDate { get; set; }
         public string Website { get; set; }
 
-        /// <summary>
-        /// The Publication Constructor assings necessary properties
-        /// </summary>
-        
         public Publication(string Name, string Publisher)
         {
             this.Name = Name;
             this.Publisher = Publisher;
-            this.ReleaseDate = String.Empty;
-            this.Website = String.Empty;
+            this.ReleaseDate = string.Empty;
+            this.Website = string.Empty;
         }
-
-        public Publication()
-        {
-        }
-
-        /// <summary>
-        /// The Write Method returns all Publication Information as a string.
-        /// </summary>
         
         public override string Write()
         {
